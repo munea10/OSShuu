@@ -1,0 +1,24 @@
+gender = input('성별 여성/남성->')
+water = int(input('일일 수분 섭취량(단위 L)'))
+walk = int(input('걸음수'))
+
+if walk < 10000:
+    print('목표에 도달하기 위해 더 많이 움직이세요.')
+
+elif 10000 <= walk < 20000:
+    print('훌륭합니다!목표를 달성했어요.')
+
+else:
+    print('대단해요!목표를 초과 달성했습니다!')
+
+if gender == '여성':
+    if water < 2.7:
+        print('오늘 물을 더 많이 마셔야합니다.')
+    else:
+        print('')
+
+elif gender == '남성':
+    if water < 3.7:
+        print('오늘 물을 더 많이 마셔야합니다.')
+else:
+    print('')
