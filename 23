@@ -1,0 +1,20 @@
+def solution(num):
+    nl = list(str(num))
+    nl.sort(reverse=True)
+
+    # # list to string
+    # msg = ''
+    # for n in nl:
+    #     msg += n
+
+    # 구분문자열.join(문자열 리스트)
+    # => 문자열(구분문자열)문자열(구분문자열)...
+    msg = ''.join(nl)
+
+    # string to int
+    result = int(msg)
+    return result
+
+
+n = 118372
+print(solution(n))
