@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+// 배열에 키보드로 입력을 받는 함수
+int inputArray(int arr[], int max) {
+    int ne = 0;
+    while (ne < max) {
+        int n;
+        cout << "숫자를 입력하세요 (0을 입력하면 입력이 종료됩니다): ";
+        cin >> n;
+
+        if (n == 0) {
+            break;
+        }
+
+        arr[ne++] = n;
+    }
+    return ne;
+}
+
+int main() {
+    const int max = 100;
+    int arr[max];
+
+    // 배열에 입력을 받음
+    int ne = inputArray(arr, max);
+
+    // 배열을 반대 순서로 출력
+}
