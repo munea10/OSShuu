@@ -1,0 +1,16 @@
+
+def solution(msg):
+    msg = msg.lower()
+    p_count = msg.count('p')
+    y_count = msg.count('y')
+
+    if p_count == y_count:
+        return True
+    else:
+        return False
+
+
+s = 'pPoooyY'
+print(solution(s))
+s = 'Pyy'
+print(solution(s))
