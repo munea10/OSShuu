@@ -1,0 +1,14 @@
+
+def solution(s):
+    # s = 'a234'
+    if (len(s) == 4 or len(s) == 6) and s.isdigit():
+        return True
+    else:
+        return False
+
+s = 'a234'
+print(solution(s))
+s = '1234'
+print(solution(s))
+s = '12345'
+print(solution(s))
