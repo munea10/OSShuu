@@ -1,0 +1,45 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <cstring> // strcpy, strlen 함수가 정의된 헤더 파일
+using namespace std;
+
+class Book {
+    char* title;
+    int price;
+public:
+    Book(const char* title, int price) {
+        this->title = new char[strlen(title) + 1]; // 동적 할당
+        strcpy(this->title, title);
+        this->price = price;
+    }
+
+    Book(const Book& b) {
+        this->title = new char[strlen(b.title) + 1]; // 깊은 복사 수행
+        strcpy(this->title, b.title);
+        this->price = b.price;
+    }
+
+    ~Book() {
+        delete[] title; // 동적 할당된 메모리 해제
+    }
+
+    void set(const char* title, int price) {
+        delete[] this->title; // 기존 메모리 해제
+        this->title = new char[strlen(title) + 1]; // 새 메모리 할당
+        strcpy(this->title, title);
+        this->price = price;
+    }
+
+    void show() const {
+        cout << title << ' ' << price << "원 " << endl;
+    }
+};
+
+int main() {
+    Book cpp("명품C++", 10000);
+    Book java(cpp);
+    java.set("명품자바", 12000);
+    cpp.show();
+    java.show();
+    return 0;
+}
