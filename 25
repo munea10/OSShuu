@@ -1,0 +1,22 @@
+# a부터 b까지 숫자의 합
+def solution(a, b):
+    if a > b:
+        a, b = b, a
+
+    # 삼항연산자(Tri-op)
+    # 변수 = 참일때 값 if 조건식 else 거짓일 때 값
+    a, b = b, a if a > b else a, b
+
+    hap = 0
+    for i in range(a, b+1):
+        hap += i
+
+    hap = sum(list(range(a, b+1)))
+    return hap
+
+
+a_list = [3, 3, 5]
+b_list = [5, 3, 3]
+
+for a, b in zip(a_list, b_list):
+    print(solution(a, b))
