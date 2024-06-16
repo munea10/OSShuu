@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+// 원의 넓이를 계산하는 함수
+float CircleArea(float radius) {
+    float pi = 3.14;
+    float area = pi * radius * radius;
+    return area;
+}
+
+int main() {
+    float radius;
+
+    cout << "반지름을 입력하세요: ";
+    cin >> radius;
+
+    float area = CircleArea(radius);
+    cout << "원의 넓이는 " << area << "입니다." << endl;
+
+    return 0;
+}
