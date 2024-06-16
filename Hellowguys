@@ -1,0 +1,28 @@
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Buffer {
+	string text;
+public:
+	Buffer(string text) { this->text = text; }
+	void add(string next) { text += next; }
+	void print() { cout << text << endl; }
+};
+
+
+Buffer& append(Buffer& buter, string bbb) { // Buffer 객체와 문자열을 입력받아 문자열을 추가하고 Buffer 객체를 반환하는 함수 정의
+	buter.add(bbb);
+	return buter;
+
+}
+
+
+int main() {
+	Buffer buf("Hello"); //"Hello" 문자열로 초기화된 Buffer 객체 생성
+	Buffer& temp = append(buf, "Guys");  // append 함수를 이용해 "Guys" 문자열을 추가하고 반환된 Buffer 객체의 참조를 temp에 저장
+	temp.print();
+	buf.print();
+	return 0;
+}
