@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+// 반복문을 사용하여 팩토리얼 계산하는 함수
+int f(int n) {
+    int result = 1;
+    for (int i = 1; i <= n; ++i) {
+        result *= i;
+    }
+    return result;
+}
+
+int main() {
+    int n;
+
+    cout << "n: ";
+    cin >> n;
+
+    if (n < 0) {
+        cout << "x" << endl;
+        return 1; // 오류 코드 반환
+    }
+
+    int result = f(n);
+    cout << n << "!= " << result << " " << endl;
+
+    return 0;
+}
