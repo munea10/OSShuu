@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+
+
+int add1(int n) {
+    int sum = 0;
+    for (int i = 2;i <= n;i += 2) {
+        sum += i;
+    }
+    return sum;
+}
+
+int add2(int n) {
+    int sum = 0;
+    for (int i = 1;i <= n;i += 2) {
+        sum += i;
+    }
+    return sum;
+}
+
+
+int main() {
+
+    int n;
+    cout << "n입력";
+    cin >> n;
+
+    if (n > 50) {
+        cout << "x";
+        return 1;
+    }
+
+    cout << "짝수의합:" << add1(n) << endl;
+    cout << "홀수의합:" << add2(n);
+
+    return 0;
+}
