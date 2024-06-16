@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+
+class Circle {
+    int radius;
+public:
+    Circle(int radius = 0) { this->radius = radius; }
+    void show() { cout << "radius = " << radius << " 인 원" << endl; }
+
+   friend Circle operator++(Circle& op1, int x);
+   friend Circle operator++(Circle& op1);
+   friend Circle operator+(int x, Circle op1);
+};
+
+Circle operator++(Circle& op1,int x) {
+    Circle tmp = op1;
+    op1.radius++;
+    return tmp;
+}
+
+
+Circle operator++(Circle& op1) {
+    op1.radius++;
+    return op1;
+}
+
+Circle operator+(int x, Circle op1) {
+    Circle tmp;
+    tmp.radius = x + op1.radius;
+    return tmp;
+
+}
+
+int main() {
+
+    Circle a(5), b(4);
+    Circle c(5), d(4);
+    ++a; // 반지름을 1 증가 시킨다. 
+    b = a++; // 반지름을 1 증가 시킨다. 
+
+    d = 1 + c;
+
+    a.show();
+    b.show();
+    c.show();
+    d.show();
+
+
+
+}
